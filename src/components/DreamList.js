@@ -12,6 +12,12 @@ const DreamList = (props) => {
             <Filter />
             <Container>
                 <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Title</Table.HeaderCell>
+                            <Table.HeaderCell>Date</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
                     <Table.Body>
                         {props.filteredDreams.map(dream =>
                             <Table.Row>
