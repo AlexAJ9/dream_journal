@@ -17,10 +17,9 @@ const Dream = (props) => {
                     <Divider />
                     <p>{props.dream.description}</p>
                     <Divider />
+                    <Link to='/'><Button onClick={removeDream} >Delete dream</Button></Link>
                 </Container>
             </div>
-            <br/>
-            <Link to='/'><Button onClick={removeDream} >Delete dream</Button></Link>
         </div>
     )
 }

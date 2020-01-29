@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(142,228,175,0.5);
+    
+    background-color: rgb(5,56,107,0.5);
 }
 .flex-box{
     width:70%;
@@ -14,32 +15,33 @@ table{
     padding: 10px;
 }
 .data-table{
+    background-color: rgb(142,228,175,0.5);
 width:70%;
 margin:auto;
 font-size: 20px;
 box-shadow: 1px 1px 9px 0px;
 margin-top: 20px;
-
+padding:20px;
 }
 .ui form{
     width:100%;
 }
 
 .one-item{
+    background-color: rgb(142,228,175,0.5);
     margin:auto;
     width:70%;
     padding: 20px;
     box-shadow: 1px 1px 9px 0px;
     font-size: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
-.ui  .table{
-font-size:20px !important;
-text-transform: capitalize;
-}
+
 .ui .button{
-    font-size:20px;
+    font-size:18px;
     color:black !important;
+    text-transform: capitalize;
 }
 .ui .form{
     font-size: 20px;
@@ -49,4 +51,10 @@ a{
 }
 .ui .container{
     padding: 10px !important;
+}
+.ui .menu{
+    padding-top:15px !important;
+    font-size:18px !important;
+    margin: auto;
+    width: 70%;
 }
