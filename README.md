@@ -1,6 +1,6 @@
 # React Redux Application with json-server for simulated backend.
 
-App allows adding, filtering and deleting journal entries with separate views for each one.
+App allows creating, updating, deleting and filtering  journal entries with separate views for each one.
 
  ![](public/img1.png)
  
