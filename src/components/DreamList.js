@@ -7,7 +7,6 @@ import './Home.css'
 const DreamList = (props) => {
 
     return (
-
         <div className='data-table'>
             <Filter />
             <Container>
@@ -29,6 +28,9 @@ const DreamList = (props) => {
                                 </Table.Cell>
                                 <Table.Cell textAlign='center'>
                                     <Button as={Link} to={`/dreams/${dream.id}`}  >Expand</Button>
+                                </Table.Cell>
+                                <Table.Cell textAlign='center'>
+                                    <Button as={Link} to={`/dreams/edit/${dream.id}`}  >Edit</Button>
                                 </Table.Cell>
                             </Table.Row>
                         )}

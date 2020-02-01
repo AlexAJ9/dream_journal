@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import DatePicker from 'react-datepicker'
-import { newDream } from '../reducers/dreamReducer'
+import { newDream, updateDream } from '../reducers/dreamReducer'
 import { Button, Form, TextArea } from 'semantic-ui-react'
 import "react-datepicker/dist/react-datepicker.css";
 import './Home.css'
 
 const DreamForm = (props) => {
 
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
+    const [title, setTitle] = useState(props.dream.title)
+    const [description, setDescription] = useState(props.dream.description)
     const [date, setDate] = useState(new Date())
+
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value)
@@ -22,16 +23,14 @@ const DreamForm = (props) => {
         setDate(date)
     }
 
-    const add = async (event) => {
+    const update = async (event) => {
         event.preventDefault()
-        const data = { description: description, title: title, date: date.toLocaleDateString() }
-        props.newDream(data)
-        setDescription('')
-        setTitle('')
+        const dream = { id: props.dream.id, description: description, title: title, date: date.toLocaleDateString() }
+        props.updateDream(dream)
     }
     return (
         <div className='one-item'>
-            <Form onSubmit={add}>
+            <Form onSubmit={update}>
                 <Form.Field>
                     <input type='text' value={title} onChange={handleTitleChange} required placeholder='Dream title' />
                 </Form.Field>
@@ -47,5 +46,10 @@ const DreamForm = (props) => {
     )
 
 }
-const ConnectedForm = connect(null, { newDream })(DreamForm)
+
+const mapDispatchToProps = {
+    newDream,
+    updateDream
+}
+const ConnectedForm = connect(null, mapDispatchToProps)(DreamForm)
 export default ConnectedForm

@@ -13,4 +13,8 @@ const remove = async dream => {
     const response = await axios.delete(`${baseUrl}/${dream.id}`)
     return response.data
 }
-export default { getAll, create, remove}
+const update = async (dream) => {
+    const response = await axios.put(`${baseUrl}/${dream.id}`,dream)
+    return response.data
+}
+export default { getAll, create, remove, update }

@@ -29,12 +29,21 @@ export const deleteDream = (data) => {
         })
     }
 }
-
+export const updateDream = (dream) => {
+    return async dispatch => {
+        const toEdit = await dreamService.update(dream)
+        dispatch({
+            type: 'EDIT',
+            data: dream
+        })
+    }
+}
 const dreamsReducer = (state = [], action) => {
     console.log(action.type)
     switch (action.type) {
         case 'INIT': return action.data
         case 'NEW_DREAM': return [...state, action.data]
+        case 'EDIT': return state.map(dream => dream.id !== action.data.id ? dream : action.data)
         case 'DELETE': return state.filter(x => x.id !== action.data)
         default: return state
     }

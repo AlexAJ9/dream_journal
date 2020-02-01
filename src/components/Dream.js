@@ -18,6 +18,7 @@ const Dream = (props) => {
                     <p>{props.dream.description}</p>
                     <Divider />
                     <Link to='/'><Button onClick={removeDream} >Delete dream</Button></Link>
+                    <Button as={Link} to={`/dreams/edit/${props.dream.id}`}  >Edit</Button>
                 </Container>
             </div>
         </div>

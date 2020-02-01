@@ -6,6 +6,7 @@ import { initDreams } from './reducers/dreamReducer'
 import DreamList from './components/DreamList'
 import Dream from './components/Dream'
 import Form from './components/Form'
+import EditForm from './components/EditForm'
 import './components/Home.css'
 
 const App = (props) => {
@@ -40,6 +41,7 @@ const App = (props) => {
         </Menu>
         <Route exact path='/' render={() => <DreamList />} />
         <Route exact path='/dreams/:id' render={({ match }) => <Dream dream={dreamById(match.params.id)} />} />
+        <Route exact path='/dreams/edit/:id' render={({ match }) => <EditForm dream={dreamById(match.params.id)} />} />
         <Route path='/create' render={() => <Form />} />
       </Router>
     </Container >
